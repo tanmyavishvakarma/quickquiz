@@ -71,7 +71,7 @@ class form extends Component{
                         </div>
                       
                         <div className="img-wrapper"> 
-                        {this.state.countries[0].map(country => 
+                        {this.state.countries.map(country => 
                             <img width="100px"src={country.photo}/>
                             )}
 
@@ -79,8 +79,8 @@ class form extends Component{
 
                      {/* <img width="100px"src={this.state.countries}/> */}
 
-                            {console.log(this.state.countries[0])}
-                            {console.log('country=',typeof(this.state.countries[0]))}
+                            {console.log(this.state.countries)}
+                            {console.log('country=',typeof(this.state.countries))}
                         </div>
                         <div className="input-wrapper">
                              <label>
