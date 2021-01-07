@@ -1,0 +1,40 @@
+.nav{
+    position: fixed;
+    top:0;
+    width:100%;
+    padding: 20px;
+    display: flex;
+    
+    justify-content: space-between;
+    background-color: black;
+    font-family: 'Oswald', sans-serif;
+    z-index:1;
+
+}
+
+.logo{
+    font-size: 30px;
+    font-family: 'Oswald';
+    COLOR:white;
+
+}
+.nav-wrapper{
+    padding-left: 15px;
+    padding-right: 15px;
+    color:black;
+     
+    font-family: "Oswald";
+}
+.sidenav-close{
+    font-family: "Oswald";
+    font-size: 20px;
+
+}
+.sidenav-trigger
+{
+    color:black;
+    cursor: pointer;
+}
+li{
+    color:black;
+}
