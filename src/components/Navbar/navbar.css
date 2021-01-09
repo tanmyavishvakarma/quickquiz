@@ -19,8 +19,7 @@
 
 }
 .nav-wrapper{
-    padding-left: 15px;
-    padding-right: 15px;
+
     color:black;
      
     font-family: "Oswald";
@@ -32,7 +31,7 @@
 }
 .sidenav-trigger
 {
-    color:black;
+    color:white;
     cursor: pointer;
 }
 li{
