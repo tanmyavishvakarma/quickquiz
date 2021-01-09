@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './game.css'
 import axios from 'axios'
-
+import Result from '../Result/Result'
 class game extends Component{
     constructor(props){
         super(props);
@@ -12,13 +12,15 @@ class game extends Component{
             countries:[],
             index:0,
             links : [],
-            submitimes:1
+            submitimes:1,
+            countriesnames:[],
+            score:0,
+            temp:0
         }
         this.handleChange=this.handleChange.bind(this);
         this.handleSubmit=this.handleSubmit.bind(this);
         this.handleSkip=this.handleSkip.bind(this);
         this.handleHint=this.handleHint.bind(this);
-       
     }
 
     componentDidMount(){
@@ -35,8 +37,14 @@ class game extends Component{
                 this.state.countries.map(country =>
                     links.push(country.photo)
                 )
+                let countriesnames=[]
+                this.state.countries.map(country=>
+                    countriesnames.push(country.name)
+                )
+                console.log(countriesnames)
                 this.setState({
                     links,
+                    countriesnames,
                     dataIsLoaded: true,
                     answer:''
                 })
@@ -44,17 +52,30 @@ class game extends Component{
     }
 
     handleSubmit=(e)=>{
-        e.preventDefault();
-        if(this.state.submitimes==3){
-            window.location='/'
-        }else{   
+        
+        e.preventDefault();  
+
             if(this.state.answer==""){
                 alert("Please enter Country Name before Submitting")
             }else{
-                const answered={
-                    answer:this.state.answer        
+                if(this.state.countriesnames[this.state.index].toLowerCase()==this.state.answer.toLowerCase()){
+                    this.setState({
+                        score:this.state.score + 1
+                    })
+                    if(this.state.submitimes==3){
+                        this.setState({
+                            temp:this.state.temp+1
+                        })
+                    }
+                    alert(this.state.score)
+                    alert("ryt")
+                    console.log("score=",this.state.score)
+                }else{
+                    console.log("score=",this.state.score)
+                      alert(this.state.score)
+                    alert("wrong")
                 }
-                console.log("sndf=",this.state.answer)
+                console.log("userinput=",this.state.answer)
 
                 this.setState({
                     index: this.state.index + 1,
@@ -62,10 +83,23 @@ class game extends Component{
                     answer:""
                 })
                 console.log('index=',this.state.index)
+                console.log('times=',this.state.submitimes)
             
-                axios.post('',answered)
-                .then(response=>console.log(response.data))
+               
             }
+            
+        if(this.state.submitimes==3){
+            if(this.state.temp==1){
+                this.setState({
+                    score:this.state.score+0
+                })
+            }
+            alert(this.state.score)
+            const propscore=this.state.score
+         
+            
+            window.location="/result"
+
         }
     }
 
@@ -88,7 +122,7 @@ class game extends Component{
 
     render(){
         let {countries} = this.state
-
+     
         return (
             <div>
                 <section className="login">

@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import './Login.css'
 
-class Login extends Component{
+class Register extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -19,6 +19,16 @@ class Login extends Component{
 
                     </div>
                             <label>
+                                Name
+                            </label>
+                            <input 
+                                type="text"
+                                autoFocus
+                                required
+                                value={this.state.answer}
+                                onChange={this.handleChange}
+                            />
+                            <label>
                                 Username
                             </label>
                             <input 
@@ -28,7 +38,9 @@ class Login extends Component{
                                 value={this.state.answer}
                                 onChange={this.handleChange}
                             />
-                            <div className="pass"></div>
+                              
+                            
+                            <div className="pass">
                              <label>
                                 Password
                             </label>
@@ -39,8 +51,9 @@ class Login extends Component{
                                 value={this.state.answer}
                                 onChange={this.handleChange}
                             />
+                            </div>
                             <div className="lbtnContainer">
-                                <button className="lbtn" onClick={this.handleSubmit}>Login</button>
+                                <button className="lbtn" onClick={this.handleSubmit}>Register</button>
                             </div>
                         
                        
@@ -51,4 +64,4 @@ class Login extends Component{
     }
 }
 
-export default Login;
+export default Register;

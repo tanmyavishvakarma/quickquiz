@@ -24,7 +24,8 @@ class Nav extends Component{
                     </div>
                 </nav>
                 <ul className="sidenav black" id="slide-out">
-                    <li><Link className="sidenav-close white-text" to="/about">About</Link></li>
+                <li><Link className="sidenav-close white-text" to="/about"></Link></li>
+                    <li><Link className="sidenav-close white-text" to="/game">Play</Link></li>
                     <li><Link className="sidenav-close white-text" to="/login">Login</Link></li>
                     <li><Link className="sidenav-close white-text" to="/register">Register</Link></li>
                     <li><Link className="sidenav-close white-text" to="/contact">Contact</Link></li>         

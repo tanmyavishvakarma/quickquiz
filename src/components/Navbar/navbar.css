@@ -4,30 +4,24 @@
     width:100%;
     padding: 20px;
     display: flex;
-    
     justify-content: space-between;
     background-color: black;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     z-index:1;
-
 }
 
 .logo{
     font-size: 30px;
     font-family: 'Oswald';
     COLOR:white;
-
 }
 .nav-wrapper{
-
-    color:black;
-     
-    font-family: "Oswald";
+    color:black;     
+    font-family: "Comfortaa";
 }
 .sidenav-close{
-    font-family: "Oswald";
-    font-size: 20px;
-
+    font-family: "Montserrat";
+    font-size: 20px;    
 }
 .sidenav-trigger
 {
