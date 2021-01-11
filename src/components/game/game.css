@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: "Nunito", sans-serif;
-    overflow: hidden;
+   overflow: hidden;
 
   }
   .heading{
@@ -108,7 +108,7 @@
     
   }
   .divider{
-     background-color:white;
+     background-color:rgb(209, 218, 232);
      font-family: 'cen ';
   }
   .skipbtn{
@@ -118,3 +118,4 @@
   .hintbtn{
     background-color: gold;
   }
+

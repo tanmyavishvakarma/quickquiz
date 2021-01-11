@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './game.css'
 import axios from 'axios'
 import Result from '../Result/Result'
+import {Redirect} from 'react-router-dom'
+
 class game extends Component{
     constructor(props){
         super(props);
@@ -65,15 +67,9 @@ class game extends Component{
                     if(this.state.submitimes==3){
                         this.setState({
                             temp:this.state.temp+1
+                      
                         })
                     }
-                    alert(this.state.score)
-                    alert("ryt")
-                    console.log("score=",this.state.score)
-                }else{
-                    console.log("score=",this.state.score)
-                      alert(this.state.score)
-                    alert("wrong")
                 }
                 console.log("userinput=",this.state.answer)
 
@@ -84,22 +80,20 @@ class game extends Component{
                 })
                 console.log('index=',this.state.index)
                 console.log('times=',this.state.submitimes)
-            
-               
             }
             
         if(this.state.submitimes==3){
+            {console.log("beforelaert",this.state.score)}
+            {console.log("temp",this.state.temp)}
+            alert("Game Ended")
+            {console.log("afteralert",this.state.score)}
             if(this.state.temp==1){
                 this.setState({
-                    score:this.state.score+0
+                    score:this.state.score+1
                 })
             }
-            alert(this.state.score)
-            const propscore=this.state.score
-         
-            
-            window.location="/result"
-
+            const point=this.state.score
+            {this.props.history.push('/result/'+point.toString())}
         }
     }
 
@@ -157,9 +151,13 @@ class game extends Component{
                             <div className="divider">dividerdividerdividerdividerdividerdivider</div>
                             <button  className="skipbtn" onClick={this.handleSkip}>Skip</button>
                             </div>
+                            
                         </div>
                     </div>            
                 </section>
+                <div>
+             
+                </div>
             </div>
         )
     }

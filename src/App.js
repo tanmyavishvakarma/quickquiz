@@ -16,7 +16,7 @@ class App extends Component{
         <Switch>
           <Route path="/game" component={Game}></Route>
           <Route path="/login" component={Login}></Route>
-          <Route path="/result" component={Result}></Route>
+          <Route path="/result/:score"  component={Result} />
           <Route path="/register" component={Register}></Route>
         </Switch>
       </div>
