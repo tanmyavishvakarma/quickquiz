@@ -6,7 +6,6 @@ function Result(props){
         const {score}=props.match.params;
         return(
             <div>
-                
                 <section className="result">
                     <div className="lContainer">
                         <div class="rheading">

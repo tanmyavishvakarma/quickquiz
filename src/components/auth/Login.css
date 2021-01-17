@@ -55,7 +55,6 @@
     font-size: 19px;
     padding: 1px;
     background: rgba(121, 121, 121, 0.1);
-    color: #fff;
     letter-spacing: 1px;
   }
   
@@ -87,4 +86,6 @@
     color: red;
     font-size: 16px;
   }
-  
+  .pass input{
+    color:black
+  }
