@@ -29,7 +29,7 @@ class Login extends Component{
             password:this.state.password
         }
 
-        axios.post('http://localhost:3001/api/login',logindata)
+        axios.post('https://toycathon.herokuapp.com/api/login',logindata)
             .then(response=>{
                 console.log(response.data)
                 if(response.data.login==="Successfully Authenticated"){
@@ -39,6 +39,10 @@ class Login extends Component{
                 else{
                     this.props.history.push("/login")
                     alert("Invalid Username or Password")
+                    this.setState({
+                        username:'',
+                        password:''
+                    })
                 }
             })
     }

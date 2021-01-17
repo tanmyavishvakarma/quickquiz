@@ -37,7 +37,7 @@ class Register extends Component{
             name:this.state.name,   
             password:this.state.password
         }
-        axios.post('http://localhost:3001/api/register',registered)
+        axios.post('https://toycathon.herokuapp.com/api/register',registered)
             .then(response=>console.log(response.data))
             console.log(registered)
             this.props.history.push("/login")

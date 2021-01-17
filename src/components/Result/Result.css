@@ -13,9 +13,10 @@
     color: #fff;
     font-size: 16px;
     letter-spacing: 1px;
-    background: #603bbb;
+    background-color: black;
     cursor: pointer;
   }
+  
   .points{
         font-family: 'Montserrat';
         font-size: 5rem;
@@ -68,18 +69,18 @@
     letter-spacing: 1px;
   }
   
-  .result .lContainer .lbtnContainer {
+  .result .lContainer .rbtnContainer {
     width: 100%;
     padding: 24px 0;
   }
   
-  .result .lContainer .lbtnContainer p {
+  .result .lContainer .rbtnContainer p {
     margin: 14px 0 0 0;
     text-align: right;
     color: #fff;
   }
   
-  .result .lContainer .lbtnContainer p span {
+  .result .lContainer .rbtnContainer p span {
     color: yellow;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -88,12 +89,17 @@
     transition: all 400ms ease-in-out;
   }
   
-  .result .lContainer .lbtnContainer p span:hover {
+  .result .lContainer .rbtnContainer p span:hover {
     color: red;
   }
   
-  .result .lbtnContainer .errorMsg {
+  .result .rbtnContainer .errorMsg {
     color: red;
     font-size: 16px;
   }
+  
+
+
+
+
   

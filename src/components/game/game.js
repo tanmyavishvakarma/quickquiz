@@ -92,8 +92,18 @@ class game extends Component{
                     score:this.state.score+1
                 })
             }
-            const point=this.state.score
-            {this.props.history.push('/result/'+point.toString())}
+            const point=this.state.score.toString()
+            localStorage.setItem("points",point.toString())
+            
+            // const leaderboard = {
+            //     points:this.state.score.toString(),
+            //     publisher:localStorage.getItem("publisher")
+            // }
+         
+            // axios.post('http://localhost:5000/',leaderboard)
+            //     .then(response=>console.log(response.data))
+            //     console.log(leaderboard)
+             {this.props.history.push('/result/'+point.toString())}
         }
     }
 
