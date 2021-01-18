@@ -1,10 +1,9 @@
-import React,{Component} from 'react'
+import React from 'react'
 import './Result.css'
-import Game from '../game/game'
 import axios from 'axios'
 function Result(props){
     function handleSubmit(e) { 
-        e.preventDefault();
+       
         const leaderboard = {
             points:localStorage.getItem("points"),
             publisher:localStorage.getItem("publisher")
@@ -12,7 +11,7 @@ function Result(props){
         console.log(leaderboard)
         axios.post('https://toycathon.herokuapp.com/api/result',leaderboard)
             .then(response=>console.log(response.data))
-            props.history.push('/')
+            props.history.push('/leaderboard')
           
     }
         const {score}=props.match.params;

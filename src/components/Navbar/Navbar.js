@@ -18,7 +18,7 @@ class Nav extends Component{
                             <li><Link className="white-text"  to="/about">About</Link></li>
                                 <li><Link className="white-text" to="/login">Login</Link></li>
                                 <li><Link className="white-text" to="/register">Register</Link></li>
-                                <li><Link className="white-text" to="/contact">Contact</Link></li>
+                                <li><Link className="white-text" to="/leaderboard">Leaderboard</Link></li>
                                 
                             </ul>
                     </div>
@@ -28,7 +28,7 @@ class Nav extends Component{
                     <li><Link className="sidenav-close white-text" to="/game">Play</Link></li>
                     <li><Link className="sidenav-close white-text" to="/login">Login</Link></li>
                     <li><Link className="sidenav-close white-text" to="/register">Register</Link></li>
-                    <li><Link className="sidenav-close white-text" to="/contact">Contact</Link></li>         
+                    <li><Link className="sidenav-close white-text" to="/leaderboard">Leaderboard</Link></li>         
                 </ul>
         </div>
         );

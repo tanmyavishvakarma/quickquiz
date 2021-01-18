@@ -33,7 +33,7 @@ class Login extends Component{
             .then(response=>{
                 console.log(response.data)
                 if(response.data.login==="Successfully Authenticated"){
-                    localStorage.setItem("publisher",response.data.publisher)
+                    localStorage.setItem("publisher",response.data.publisher?response.data.publisher:"Anonymouse")
                     this.props.history.push("/game")    
                 } 
                 else{

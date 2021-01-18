@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import './game.css'
 import axios from 'axios'
-import Result from '../Result/Result'
-import {Redirect} from 'react-router-dom'
 
 class game extends Component{
     constructor(props){
@@ -60,11 +58,11 @@ class game extends Component{
             if(this.state.answer===""){
                 alert("Please enter Country Name before Submitting")
             }else{
-                if(this.state.countriesnames[this.state.index].toLowerCase()==this.state.answer.toLowerCase()){
+                if(this.state.countriesnames[this.state.index].toLowerCase()===this.state.answer.toLowerCase()){
                     this.setState({
                         score:this.state.score + 1
                     })
-                    if(this.state.submitimes==3){
+                    if(this.state.submitimes===3){
                         this.setState({
                             temp:this.state.temp+1
                       
@@ -82,12 +80,12 @@ class game extends Component{
                 console.log('times=',this.state.submitimes)
             }
             
-        if(this.state.submitimes===3){
+        if(this.state.submitimes===5){
             {console.log("beforelaert",this.state.score)}
             {console.log("temp",this.state.temp)}
             alert("Game Ended")
             {console.log("afteralert",this.state.score)}
-            if(this.state.temp==1){
+            if(this.state.temp===1){
                 this.setState({
                     score:this.state.score+1
                 })
@@ -113,19 +111,47 @@ class game extends Component{
         })
     }
 
-    handleSkip=(e)=>{
+    handleHint=(e)=>{
         this.setState({
             index:this.state.index+1,
-            answer:""
+            answer:"",
         })
     }
     
-    handleHint=(e)=>{
-
+    handleSkip=(e)=>{
+        this.setState({
+            index:this.state.index+1,
+            submitimes:this.state.submitimes+1,
+          
+            
+        })
+        if(this.state.submitimes===5){
+            {console.log("beforelaert",this.state.score)}
+            {console.log("temp",this.state.temp)}
+            alert("Game Ended")
+            {console.log("afteralert",this.state.score)}
+            if(this.state.temp===1){
+                this.setState({
+                    score:this.state.score+1
+                })
+            }
+            const point=this.state.score
+            localStorage.setItem("points",point.toString())
+            
+            // const leaderboard = {
+            //     points:this.state.score.toString(),
+            //     publisher:localStorage.getItem("publisher")
+            // }
+         
+            // axios.post('http://localhost:5000/',leaderboard)
+            //     .then(response=>console.log(response.data))
+            //     console.log(leaderboard)
+             {this.props.history.push('/result/'+point.toString())}
+        }
     }
 
     render(){
-        let {countries} = this.state
+    
      
         return (
             <div>

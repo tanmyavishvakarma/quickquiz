@@ -8,6 +8,7 @@ import Login from './components/auth/Login'
 import Result from './components/Result/Result'
 import Register from './components/auth/Register'
 import About from './components/About/About'
+import Leaderboard from './components/Leaderboard/Leaderboard'
 class App extends Component{
   render(){
   return (
@@ -20,6 +21,7 @@ class App extends Component{
           <Route path="/result/:score"  component={Result} />
           <Route path="/register" component={Register}></Route>
           <Route path="/about" component={About}></Route>
+          <Route path="/leaderboard" component={Leaderboard}></Route>
         </Switch>
       </div>
     </BrowserRouter>
