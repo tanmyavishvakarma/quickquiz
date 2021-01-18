@@ -41,6 +41,7 @@ class Register extends Component{
             .then(response=>console.log(response.data))
             console.log(registered)
             this.props.history.push("/login")
+            
     }
     render(){
         return(

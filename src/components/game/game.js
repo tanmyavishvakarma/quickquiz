@@ -57,7 +57,7 @@ class game extends Component{
         
         e.preventDefault();  
 
-            if(this.state.answer==""){
+            if(this.state.answer===""){
                 alert("Please enter Country Name before Submitting")
             }else{
                 if(this.state.countriesnames[this.state.index].toLowerCase()==this.state.answer.toLowerCase()){
@@ -82,7 +82,7 @@ class game extends Component{
                 console.log('times=',this.state.submitimes)
             }
             
-        if(this.state.submitimes==3){
+        if(this.state.submitimes===3){
             {console.log("beforelaert",this.state.score)}
             {console.log("temp",this.state.temp)}
             alert("Game Ended")
@@ -92,7 +92,7 @@ class game extends Component{
                     score:this.state.score+1
                 })
             }
-            const point=this.state.score.toString()
+            const point=this.state.score
             localStorage.setItem("points",point.toString())
             
             // const leaderboard = {

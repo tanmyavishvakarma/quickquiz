@@ -12,6 +12,7 @@ function Result(props){
         console.log(leaderboard)
         axios.post('https://toycathon.herokuapp.com/api/result',leaderboard)
             .then(response=>console.log(response.data))
+            props.history.push('/')
           
     }
         const {score}=props.match.params;
@@ -23,11 +24,10 @@ function Result(props){
                             Congratulation's your Score was:
                         </div >
                         <div className="points">{score}</div>
-                        
-                        {console.log("points",score)}
-                    </div>
-                    <div className="rbtnContainer">
-                        <button className="lbtn" onClick={handleSubmit}>Submit Score</button>
+                    
+                        <div className="rsbtnContainer">
+                            <button className="rsbtn" onClick={handleSubmit}>Submit Score</button>
+                        </div>
                     </div>
                 </section>
             </div>
